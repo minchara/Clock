@@ -1,0 +1,33 @@
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0}
+body{overflow:hidden;background:#8b480b;color:#f5e3c6;font-family:"Palatino Linotype","Book Antiqua",Georgia,serif}
+.clock-page{min-height:100svh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(14px,3vh,26px);overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 42%,#bd7628 0,#a65b13 38%,#80420c 76%,#5a300d 100%)}
+.clock-page:before,.clock-page:after{content:"";position:absolute;inset:0;pointer-events:none}
+.clock-page:before{opacity:.32;background:repeating-linear-gradient(0deg,#f5d7a608 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,#321b0b08 0 1px,transparent 1px 4px),radial-gradient(ellipse at 50% 48%,transparent 48%,#2c160e37 100%)}
+.clock-page:after{inset:12px;border:1px solid #dfb4742b;box-shadow:inset 0 0 0 5px #4b290b0a,inset 0 0 0 6px #e2b77514}
+.clock-face{position:relative;z-index:1;display:block;width:min(88vw,70vh,690px);height:auto;aspect-ratio:1;overflow:visible;filter:drop-shadow(0 15px 36px #3217084d)}
+.dial-fill{fill:#75400f;fill-opacity:.13}
+.dial-glow{fill:url(#dial-base)}
+.dial-ring{fill:none;stroke:#e1bd7d;stroke-opacity:.3}
+.outer-ring{stroke-width:1.2;stroke-opacity:.58}
+.engraved-ring{stroke-width:3.2;stroke-opacity:.55}
+.inner-ring{stroke-width:1.1;stroke-opacity:.52}
+.numeral-ring{stroke-width:.8;stroke-opacity:.31;stroke-dasharray:1 4}
+.inner-engraving{stroke-width:1;stroke-opacity:.25;stroke-dasharray:2 6}
+.dial-ticks{stroke:#efd8aa;stroke-linecap:round}
+.tick{stroke-opacity:.58;stroke-width:1.15}
+.tick.major{stroke:#e8c987;stroke-opacity:.92;stroke-width:2.3}
+.clock-numbers{fill:#f0d9ac;fill-opacity:.88;text-anchor:middle;dominant-baseline:middle;font-family:"Palatino Linotype","Book Antiqua",Georgia,serif;font-size:34px;font-weight:600;letter-spacing:.5px}
+.clock-numbers text.major-number{fill:#ffeac1;fill-opacity:1;font-size:41px}
+.hour-hand,.minute-hand{fill:url(#hand-metal);filter:drop-shadow(0 1px 3px #321905aa)}
+.hour-hand{fill:#e9d1a2}
+.minute-hand{fill:#f6e6c6}
+.hand-engraving{fill:none;stroke:#94652b;stroke-width:1.6;stroke-linecap:round;opacity:.75}
+.second-hand{fill:none;stroke:#893b2a;stroke-width:2.1;stroke-linecap:round;filter:drop-shadow(0 1px 1px #31190b88)}
+.second-hand circle{fill:#893b2a;stroke:none}
+.center-ring{fill:url(#hub-metal);stroke:#f0d49d;stroke-width:1.6;filter:drop-shadow(0 1px 3px #32190599)}
+.center-cap{fill:#704516;stroke:#f2d8aa;stroke-width:.8}
+.center-star{fill:#f7e3b6}
+.digital-time{z-index:1;color:#f0d7ad;font:500 12px/1.1 "Palatino Linotype","Book Antiqua",Georgia,serif;letter-spacing:.34em;font-variant-numeric:tabular-nums;text-shadow:0 1px 4px #35190b;opacity:.9}
+@media(max-height:600px){.clock-page{gap:10px}.clock-face{width:min(80vw,78vh,620px)}.digital-time{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto}}

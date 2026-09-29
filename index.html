@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#a34c04" />
+    <meta name="description" content="A real-time analog clock in a warm amber palette." />
+    <title>Amber Clock</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="clock-page" aria-label="Local time clock">
+      <svg class="clock-face" viewBox="0 0 720 720" role="img" aria-labelledby="clock-title">
+        <title id="clock-title">Local time</title>
+        <defs>
+          <radialGradient id="dial-base" cx="42%" cy="34%" r="76%">
+            <stop offset="0" stop-color="#c88739" stop-opacity=".34" />
+            <stop offset=".72" stop-color="#8a470c" stop-opacity=".13" />
+            <stop offset="1" stop-color="#43240c" stop-opacity=".3" />
+          </radialGradient>
+          <linearGradient id="hand-metal" x1="0" y1="0" x2="1" y2="0">
+            <stop stop-color="#eed39d" />
+            <stop offset=".48" stop-color="#fff4d8" />
+            <stop offset="1" stop-color="#bd8b4e" />
+          </linearGradient>
+          <radialGradient id="hub-metal">
+            <stop stop-color="#f9e6bf" />
+            <stop offset=".58" stop-color="#bd8740" />
+            <stop offset="1" stop-color="#68400f" />
+          </radialGradient>
+        </defs>
+        <circle class="dial-fill" cx="360" cy="360" r="304" />
+        <circle class="dial-glow" cx="360" cy="360" r="304" />
+        <circle class="dial-ring engraved-ring" cx="360" cy="360" r="300" />
+        <circle class="dial-ring outer-ring" cx="360" cy="360" r="304" />
+        <circle class="dial-ring inner-ring" cx="360" cy="360" r="288" />
+        <circle class="dial-ring numeral-ring" cx="360" cy="360" r="238" />
+        <circle class="dial-ring inner-engraving" cx="360" cy="360" r="222" />
+        <g class="dial-ticks" id="dial-ticks" aria-hidden="true"></g>
+        <g class="clock-numbers" id="clock-numbers" aria-hidden="true"></g>
+
+        <g class="hour-hand" id="hour-hand" aria-hidden="true">
+          <path d="M360 380C350 370 351 352 354 338L357 205Q360 198 363 205L369 338C372 353 370 370 360 380Z" />
+          <path class="hand-engraving" d="M360 365V222" />
+        </g>
+        <g class="minute-hand" id="minute-hand" aria-hidden="true">
+          <path d="M360 382Q353 371 355 356L357 105Q360 98 363 105L366 356Q367 371 360 382Z" />
+          <path class="hand-engraving" d="M360 365V120" />
+        </g>
+        <g class="second-hand" id="second-hand" aria-hidden="true">
+          <path d="M360 397V87" />
+          <circle cx="360" cy="405" r="5" />
+        </g>
+        <circle class="center-ring" cx="360" cy="360" r="16" aria-hidden="true" />
+        <circle class="center-cap" cx="360" cy="360" r="10" aria-hidden="true" />
+        <path class="center-star" d="m360 350 2.8 7.2 7.2 2.8-7.2 2.8-2.8 7.2-2.8-7.2-7.2-2.8 7.2-2.8Z" aria-hidden="true" />
+      </svg>
+      <time class="digital-time" id="digital-time" aria-live="off">--:--:--</time>
+    </main>
+    <script src="script.js" defer></script>
+  </body>
+</html>
